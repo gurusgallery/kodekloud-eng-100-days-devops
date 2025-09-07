@@ -1,9 +1,12 @@
-# Task 2 - Create Temporary User with Expiry Date
+**🌟 Task 2 - Create Temporary User with Expiry Date**
 
-## Task Description
-As part of the temporary assignment to the Nautilus project, a developer named ravi requires access for a limited duration. To ensure smooth access management, a temporary user account with an expiry date is needed.
+**📌 Task Description**
 
-Create a user named **ravi** on App Server 3 in Stratos Datacenter. Set the expiry date to **2024-03-28**, ensuring the user is created in lowercase as per standard protocol.
+As part of the temporary assignment to the **Nautilus project**, a developer named ravi requires access for a limited duration. To ensure smooth access management, a temporary user account with an expiry date is needed.
+
+👉 Your task: Create a user named **ravi** on **App Server 3** in *Stratos Datacenter*. Set the expiry date to **2024-03-28**, ensuring the user is created in lowercase as per standard protocol.
+
+💡 **Note:** You can find the infrastructure details by clicking on the **Details of all Users and Servers** button on the top-right section of the page.
 
 ---
 
