@@ -340,6 +340,7 @@ Each day follows a structured learning approach:
 ## 📚 Additional Resources
 
 - 📖 **[KodeKloud Platform](https://kodekloud.com/)** - Official learning platform
+- 🎯 **[KodeKloud Engineer (Referral Link)](https://engineer.kodekloud.com/signup?referral=68aacafd8e393d6c859e5cb9)** - Join the challenge with my referral
 - 📝 **[DevOps Roadmap](https://roadmap.sh/devops)** - Complete learning path
 - 📑 **[Cheat Sheets](./resources/cheat-sheets/)** - Quick reference guides
 - 🛠️ **[Tools & Scripts](./resources/tools/)** - Helpful automation scripts
