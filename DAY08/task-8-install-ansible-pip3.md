@@ -10,6 +10,34 @@ The **Nautilus DevOps team** decided to use Ansible for automation and configura
 
 ---
 
+## 🚨 Task-Specific Challenge & Solution
+
+**🔍 Main Challenge Encountered:**
+
+The primary challenge was **installing a specific version of Ansible (4.7.0)** using pip3 while ensuring global system accessibility for all users, requiring precise version management and system-wide installation configuration.
+
+**💡 Solution Approach:**
+
+1. **Pre-Installation Verification**: Checked Python3 and pip3 availability using version commands to ensure installation prerequisites
+2. **Specific Version Installation**: Used `sudo pip3 install ansible==4.7.0` to install the exact required version with global privileges
+3. **Global Access Configuration**: Applied sudo privileges during installation to place Ansible binaries in system-wide paths (`/usr/local/bin/`)
+4. **Version Mapping Understanding**: Recognized that Ansible 4.7.0 corresponds to ansible-core 2.11.12 for proper version verification
+5. **Comprehensive Testing**: Verified installation through version checks, component availability, and basic functionality tests
+
+**🎯 Key Success Factors:**
+- **Precise version specification** using `ansible==4.7.0` syntax to meet exact requirements
+- **Global installation approach** using sudo pip3 for system-wide availability
+- **Binary location verification** ensuring ansible commands are accessible from standard PATH locations
+- **Multi-component testing** verifying ansible, ansible-playbook, ansible-galaxy, and ansible-vault availability
+
+**⚠️ Critical Learning Points:**
+- **Version specificity** is critical for compatibility and reproducible deployments
+- **Installation method choice** (pip3 vs package manager) affects version control and global accessibility
+- **Ansible version mapping** between package versions and core versions requires understanding
+- **Global vs user installation** impacts accessibility for automation scripts and multiple users
+
+---
+
 ## 🔹 Step 1: Check Python and pip3 availability
 
 ```bash
