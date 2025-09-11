@@ -10,6 +10,36 @@ The system admins team of **xFusionCorp Industries** has set up some scripts on 
 
 ---
 
+## 🚨 Task-Specific Challenge & Solution
+
+**🔍 Main Challenge Encountered:**
+
+The primary challenge was **establishing passwordless SSH authentication** from the jump host user (thor) to multiple app servers using different user accounts, requiring coordinated key management and authentication setup across the infrastructure.
+
+**💡 Solution Approach:**
+
+1. **SSH Key Generation**: Created RSA key pair using `ssh-keygen -t rsa` with empty passphrase for automated script compatibility
+2. **Multi-Server Key Distribution**: Used `ssh-copy-id` to distribute public keys to each app server with their respective users:
+   - `tony@stapp01` for App Server 1
+   - `steve@stapp02` for App Server 2  
+   - `banner@stapp03` for App Server 3
+3. **Authentication Testing**: Verified passwordless access using `ssh` commands to each server without password prompts
+4. **Script Compatibility**: Ensured configuration supports automated script execution from jump host
+
+**🎯 Key Success Factors:**
+- **Empty passphrase strategy** enabling automated script execution without manual intervention
+- **User mapping accuracy** ensuring correct user accounts for each app server
+- **Systematic key distribution** using ssh-copy-id for reliable public key installation
+- **Comprehensive testing** verifying passwordless access to all target servers
+
+**⚠️ Critical Learning Points:**
+- **Key-based authentication** eliminates password prompts for automation scripts
+- **User account mapping** must be precise for multi-server environments
+- **Security vs automation balance** - empty passphrases enable automation but reduce key security
+- **SSH key distribution** requires one-time password authentication before becoming passwordless
+
+---
+
 ## 🔹 Step 1: Generate SSH key pair for user thor
 
 **Login as thor user on jump host first:**
