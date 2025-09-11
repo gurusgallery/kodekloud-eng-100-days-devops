@@ -10,6 +10,34 @@ Following security audits, the **xFusionCorp Industries** security team has roll
 
 ---
 
+## 🚨 Task-Specific Challenge & Solution
+
+**🔍 Main Challenge Encountered:**
+
+The primary challenge was **implementing security hardening** by disabling direct SSH root login across multiple app servers while maintaining administrative access and avoiding system lockout.
+
+**💡 Solution Approach:**
+
+1. **Multi-Server Implementation**: Applied consistent security configuration across all app servers (app01, app02, app03)
+2. **Configuration File Management**: Modified `/etc/ssh/sshd_config` to change `PermitRootLogin` from default to `no`
+3. **Service Management**: Used `sudo systemctl restart sshd` to apply configuration changes without system reboot
+4. **Verification Process**: Used `grep -i "permitrootlogin" /etc/ssh/sshd_config` to confirm configuration changes
+5. **Safety Precautions**: Maintained alternative access methods before implementing root login restrictions
+
+**🎯 Key Success Factors:**
+- **Systematic approach** across multiple servers for consistent security posture
+- **Safe configuration changes** with proper testing and verification procedures
+- **Service restart management** to apply changes without system downtime
+- **Alternative access preservation** to prevent administrative lockout scenarios
+
+**⚠️ Critical Learning Points:**
+- **Security hardening** should be applied consistently across infrastructure
+- **Configuration backup** is essential before making SSH security changes
+- **Alternative access methods** must be maintained when restricting root access
+- **Testing procedures** should verify both functionality and security compliance
+
+---
+
 ## 🔹 Step 1: Login to each app server
 
 **Servers to configure:** `app01`, `app02`, `app03`
