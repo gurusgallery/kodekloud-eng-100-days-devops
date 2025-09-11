@@ -15,6 +15,34 @@ Following a security audit, the **xFusionCorp Industries** security team has opt
 
 ---
 
+## 🚨 Task-Specific Challenge & Solution
+
+**🔍 Main Challenge Encountered:**
+
+The primary challenge was **installing SELinux packages while simultaneously disabling SELinux** for testing purposes, requiring careful configuration management to avoid conflicts between installation and operational requirements.
+
+**💡 Solution Approach:**
+
+1. **System Compatibility**: Verified OS version using `cat /etc/os-release` to ensure SELinux package compatibility
+2. **Package Installation**: Installed required SELinux packages (`selinux-policy`, `libselinux-utils`) for future testing needs
+3. **Configuration Management**: Modified `/etc/selinux/config` to set `SELINUX=disabled` for current testing phase
+4. **Reboot Planning**: Coordinated with planned maintenance window to avoid immediate system restart
+5. **Status Verification**: Used configuration file checks to confirm proper disable settings
+
+**🎯 Key Success Factors:**
+- **Package preparation** for future SELinux enablement while meeting current testing requirements
+- **Configuration file management** to control SELinux behavior across system reboots
+- **Maintenance window coordination** to apply changes during scheduled downtime
+- **Verification procedures** to ensure configuration changes are properly saved
+
+**⚠️ Critical Learning Points:**
+- **SELinux installation** doesn't automatically enable enforcement - configuration controls behavior
+- **Configuration persistence** requires proper `/etc/selinux/config` file modification
+- **Reboot dependency** for SELinux mode changes to take full effect
+- **Testing phases** may require temporary security policy adjustments
+
+---
+
 ## 🔹 Step 1: Check OS version compatibility
 
 ```bash
