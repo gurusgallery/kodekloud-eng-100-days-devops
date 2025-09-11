@@ -52,7 +52,7 @@ file nautilus.crt nautilus.key
 
 ```bash
 cat /etc/os-release
-yum install nginx -y
+yum install nginx -y  
 ```
 
 **Purpose**: Check the operating system version and install Nginx web server.
@@ -91,7 +91,7 @@ systemctl enable nginx
 
 ---
 
-## 🔹 Step 5: Move SSL certificate files to standard locations
+## 🔹 Step 5: Move SSL certificate files to standard locations make sure to cd /tls
 
 ```bash
 mv /tmp/nautilus.crt /etc/pki/tls/certs/
@@ -126,7 +126,7 @@ chmod 600 /etc/pki/tls/private/nautilus.key
 
 ---
 
-## 🔹 Step 7: Configure Nginx for SSL
+## 🔹 Step 7: Configure Nginx for SSL 
 
 ```bash
 vi /etc/nginx/nginx.conf
@@ -143,7 +143,7 @@ vi /etc/nginx/nginx.conf
 server {
     listen       443 ssl http2 default_server;
     listen       [::]:443 ssl http2 default_server;
-    server_name  _;
+    server_name  172.16.238.11;        # replace this server_name _; to your server ip mine was App Server 3
     root         /usr/share/nginx/html;
 
     # SSL Configuration
@@ -254,7 +254,7 @@ chown nginx:nginx index.html
 ## 🔹 Step 11: Test local SSL connectivity
 
 ```bash
-curl -Ik https://localhost/
+curl -Ik https://<app-server-ip>/  #replace this with your server ip 
 ```
 
 **Purpose**: Test SSL connectivity locally on the server to verify basic functionality.
@@ -354,14 +354,37 @@ yum install nginx -y
 systemctl start nginx && systemctl enable nginx
 systemctl status nginx
 
-# Move and secure SSL files
-mv /tmp/nautilus.crt /etc/pki/tls/certs/
-mv /tmp/nautilus.key /etc/pki/tls/private/
-chmod 644 /etc/pki/tls/certs/nautilus.crt
-chmod 600 /etc/pki/tls/private/nautilus.key
+# Check Nginx status before installation
+systemctl status nginx
+# (Will show "nginx could not be found")
 
-# Configure Nginx SSL
-vi /etc/nginx/nginx.conf
+# Install and start Nginx
+cat /etc/os-release
+yum install nginx -y
+systemctl start nginx && systemctl enable nginx
+systemctl status nginx
+
+# Explore SSL directories
+cd /etc/pki
+ls -l
+cd tls  
+ls -l
+cd certs
+ls -l
+
+# Move SSL files (ensure you're in /etc/pki/tls)
+cd /etc/pki/tls
+pwd
+mv /tmp/nautilus.crt certs/
+mv /tmp/nautilus.key private/
+chmod 644 certs/nautilus.crt
+chmod 600 private/nautilus.key
+
+# Configure Nginx
+cd /etc/nginx/
+ls -l
+vi nginx.conf
+# (Configure SSL server block with server IP)
 # (Enable and configure SSL server block)
 
 # Test and restart
