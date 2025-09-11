@@ -10,6 +10,33 @@ As part of the temporary assignment to the **Nautilus project**, a developer nam
 
 ---
 
+## 🚨 Task-Specific Challenge & Solution
+
+**🔍 Main Challenge Encountered:**
+
+The primary challenge was creating a **temporary user account with an automatic expiry date** to ensure proper access management and security compliance for time-limited project assignments.
+
+**💡 Solution Approach:**
+
+1. **User Existence Check**: Used `cat /etc/passwd | grep ravi` to verify no conflicting user accounts
+2. **Expiry Date Implementation**: Used `sudo useradd -e 2024-03-28 ravi` to set automatic account expiration
+3. **Date Format Compliance**: Ensured proper YYYY-MM-DD format for the expiry date parameter
+4. **Verification Process**: Used `sudo chage -l ravi` to display and confirm account aging information including expiry date
+
+**🎯 Key Success Factors:**
+- **Automated expiry management** using the `-e` flag to prevent manual oversight
+- **Proper date formatting** in YYYY-MM-DD format for system compatibility
+- **Account aging verification** to ensure expiry settings are correctly applied
+- **Security compliance** for temporary project assignments with defined end dates
+
+**⚠️ Critical Learning Points:**
+- **Account expiry automation** prevents security risks from forgotten temporary accounts
+- **Date format precision** is critical for proper system interpretation
+- **chage command utility** provides comprehensive account aging information
+- **Temporary access management** requires both creation and expiry date planning
+
+---
+
 ## 🔹 Step 1: Check if user 'ravi' already exists
 
 ```bash
