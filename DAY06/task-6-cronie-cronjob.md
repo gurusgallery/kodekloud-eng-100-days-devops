@@ -16,6 +16,34 @@ b. Add a cron job to run every 5 minutes: `*/5 * * * * echo hello > /tmp/cron_te
 
 ---
 
+## 🚨 Task-Specific Challenge & Solution
+
+**🔍 Main Challenge Encountered:**
+
+The primary challenge was **implementing automated task scheduling** using cron across multiple servers while ensuring the cronie service was properly installed, configured, and executing scheduled jobs reliably.
+
+**💡 Solution Approach:**
+
+1. **Service Installation**: Installed `cronie` package to provide cron daemon functionality across all Nautilus app servers
+2. **Service Management**: Started and enabled `crond` service to ensure automatic startup and continuous operation
+3. **Cron Job Configuration**: Created a precise cron expression `*/5 * * * * echo hello > /tmp/cron_text` for 5-minute interval execution
+4. **Root User Implementation**: Used `sudo crontab -e` to configure the cron job under root user as specified
+5. **Verification Process**: Used `crontab -l` and file system checks to confirm job scheduling and execution
+
+**🎯 Key Success Factors:**
+- **Cron syntax precision** ensuring correct time interval specification (*/5 for every 5 minutes)
+- **Service persistence** through systemctl enable for automatic startup after reboots
+- **Output redirection** to create verifiable execution evidence in `/tmp/cron_text`
+- **Multi-server deployment** ensuring consistent automation across infrastructure
+
+**⚠️ Critical Learning Points:**
+- **Cron expression syntax** requires precise field positioning for proper scheduling
+- **Service dependencies** - crond must be running for cron jobs to execute
+- **User context matters** - root crontab vs user crontab have different capabilities
+- **Output management** is essential for monitoring and verifying automated task execution
+
+---
+
 ## 🔹 Step 1: Check OS version on all servers
 
 ```bash
