@@ -10,6 +10,40 @@ The **Nautilus application** in **Stratos Datacenter** is unable to connect to t
 
 ---
 
+## 🚨 Task-Specific Challenge & Solution
+
+**🔍 Main Challenge Encountered:**
+
+The primary challenge was **diagnosing and resolving MariaDB service failure** caused by missing data directory and uninitialized database, preventing the Nautilus application from connecting to the database server.
+
+**💡 Solution Approach:**
+
+1. **Service Diagnosis**: Used `systemctl status mariadb` to identify service failure and examine detailed error messages
+2. **Root Cause Analysis**: Used `journalctl -xeu mariadb.service` to discover missing `/var/lib/mysql` data directory issue
+3. **Directory Structure Recovery**: Created missing data directory and applied proper ownership using `chown mysql:mysql`
+4. **Database Initialization**: Used `mariadb-install-db` to initialize the database system tables and essential directories
+5. **Service Recovery**: Successfully started MariaDB after resolving directory and initialization issues
+6. **Connectivity Verification**: Tested database accessibility using MariaDB shell and `SHOW DATABASES` command
+
+**🎯 Key Success Factors:**
+- **Systematic troubleshooting** using service logs and status commands to identify root causes
+- **Directory permission management** ensuring proper mysql user ownership for data directory
+- **Database initialization process** using mariadb-install-db for first-time setup
+- **Service persistence configuration** enabling MariaDB for automatic startup on system boot
+
+**⚠️ Critical Learning Points:**
+- **Missing data directories** are common causes of database service startup failures
+- **Permission ownership** is critical for database service functionality (mysql:mysql)
+- **Database initialization** is required for first-time installations or corrupted data directories
+- **Service logs** provide essential diagnostic information for troubleshooting database issues
+
+**🔒 Most Common Issues Resolved:**
+- **Missing `/var/lib/mysql` directory** preventing MariaDB from accessing its data files
+- **Uninitialized database directory** requiring `mariadb-prepare-db-dir` or `mariadb-install-db` setup
+- **Improper directory ownership** blocking MariaDB's ability to read/write data files
+
+---
+
 ## 🔹 Step 1: Check MariaDB service status
 
 ```bash
