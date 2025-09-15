@@ -164,7 +164,7 @@ sudo crontab -l
 
 ```bash
 cd /tmp
-ls -l cron_text
+sudo ls -l cron_text
 ```
 
 **Purpose**: Check the cron job output file and permissions.
@@ -203,7 +203,7 @@ sudo crontab -e
 sudo crontab -l
 
 # Check output file
-ls -l /tmp/cron_text
+sudo ls -l /tmp/cron_text
 cat /tmp/cron_text
 ```
 
