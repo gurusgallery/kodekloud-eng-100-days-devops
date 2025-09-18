@@ -196,7 +196,7 @@ There is a **Git server** utilized by the **Nautilus project teams**. Recently, 
 ![alt text](<100 days of devops fork-1.png>)
 
 
-![alt text](<100 days of devops final git.png>)
+![alt text](<100 days of devops fork 2.png>)
 
 ---
 
