@@ -159,7 +159,7 @@ server {
 
     location / {
         root   /usr/share/nginx/html;
-        index  index.html index.htm;
+        index  index.html index.html;
     }
 
     error_page   404              /404.html;
